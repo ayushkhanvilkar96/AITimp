@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student JSON</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+Enter the roll number<input type="text" id="roll" onchange="getStudents()">
+<br><br>
+
+<p id="detail_of_roll"></p>
+<br><br>
+
+<table id="dee"></table>
+	
+<script>
+function getStudents() {
+
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    //alert(this.readyState);  <--🖕 🖕 fuck you ready state for making my life a nightmare -->
+    if (this.readyState == 4 && this.status == 200) {
+      showJSON(this);
+	}
+  };
+  xmlhttp.open("GET", "AIT_20.json", true);
+  xmlhttp.send();
+}
+function showJSON(json) {
+  var i, j;
+  var k;
+  k=0;
+  var roll = document.getElementById("roll");
+
+var rol = document.getElementById("roll");
+document.getElementById("detail_of_roll").innerHTML ="Details of Roll no "+rol.value+" are: ";
+
+
+  var jsonObj = JSON.parse(json.responseText);
+  var table = "<tr><th>Roll no</th><th>Name</th><th>Divison</th><th>Marks</th></tr>";
+  <!-- var x = xmlDoc.getElementsByTagName("book"); -->
+  //alert(jsonObj.students[2].companies.length);
+  for (i = 0; i < jsonObj.students.length; i++) {
+  	if(roll.value==jsonObj.students[i].roll_no)
+  	{
+      table += "<tr><td>" + jsonObj.students[i].roll_no + "</td><td>" + jsonObj.students[i].name + "</td><td>" + jsonObj.students[i].divison + "</td><td>" + jsonObj.students[i].marks + "</td></tr>";
+  	
+  	k=1;
+  	}
+  }
+  if(k==0)
+  {
+  	alert("Please enter correct roll no");
+  }
+
+  document.getElementById("dee").innerHTML = table;
+}
+</script>
+</body>
+</html>

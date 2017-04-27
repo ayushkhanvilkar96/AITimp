@@ -1,0 +1,31 @@
+{ 
+  "students": [
+    {
+      "name":"Sanat Sathaye",
+	  "department": "SUFH", 
+	  "companies": ["ASHF", "SUIAF"],
+	  "salary": [234267, 35256]
+    }, 
+	
+	{
+      "name":"WRAIOD LCKM",
+	  "department": "FDHK", 
+	  "companies": ["ASHF"],
+	  "salary": [842]
+    },
+    
+    {
+      "name":"ASUIWRFJ IIAFNI",
+	  "department": "AGSBUYF", 
+	  "companies": ["AIOMCI", "ASUIF", "HFXU"],
+	  "salary": [894, 784629, 25159]
+    }, 	
+	
+	{
+      "name":"AJKSXMI OGWEJM",
+	  "department": "IUSMIXCZ", 
+	  "companies": ["NXZI"],
+	  "salary": [541451]
+    }
+  ]
+}

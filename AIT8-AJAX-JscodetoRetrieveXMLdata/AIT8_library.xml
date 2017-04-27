@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book id="23426">
+    <name>ABC</name>
+	<authors>JSAD, ASK</authors>
+	<publisher>GHSDAH</publisher>
+	<price>5156</price>
+  </book>
+  
+  <book id="9834">
+    <name>SAFAEGH</name>
+	<authors>AGSGDGH</authors>
+	<publisher>ASDGSDH</publisher>
+	<price>4522</price>
+  </book>
+  
+  <book id="1234">
+    <name>SFYAUBS</name>
+	<authors>ASBDA</authors>
+	<publisher>ISMZXFJAW</publisher>
+	<price>445</price>
+  </book>
+  
+  <book id="384">
+    <name>UYADUAS</name>
+	<authors>VMXCKJWI</authors>
+	<publisher>WSIOJMIG</publisher>
+	<price>8985</price>
+  </book>
+</library>

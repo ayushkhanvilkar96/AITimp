@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student JSON</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<button type="button" onclick="getStudents()">Click for students!</button>
+<br><br>
+<table id="dee"></table>
+	
+<script>
+function getStudents() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    //alert(this.readyState);  <--🖕 🖕 fuck you ready state for making my life a nightmare -->
+    if (this.readyState == 4 && this.status == 200) {
+      showJSON(this);
+	}
+  };
+  xmlhttp.open("GET", "AIT9_student.json", true);
+  xmlhttp.send();
+}
+function showJSON(json) {
+  var i, j;
+  var jsonObj = JSON.parse(json.responseText);
+  var table = "<tr><th>Name</th><th>Department</th><th>Companies</th><th>Salary (in Rs.)</th></tr>";
+  <!-- var x = xmlDoc.getElementsByTagName("book"); -->
+  //alert(jsonObj.students[2].companies.length);
+  for (i = 0; i < jsonObj.students.length; i++) {
+    for(j = 0; j < jsonObj.students[i].companies.length; j++)
+      table += "<tr><td>" + jsonObj.students[i].name + "</td><td>" + jsonObj.students[i].department + "</td><td>" + jsonObj.students[i].companies[j] + "</td><td>" + jsonObj.students[i].salary[j] + "</td></tr>";
+  }
+  document.getElementById("dee").innerHTML = table;
+}
+</script>
+</body>
+</html>
